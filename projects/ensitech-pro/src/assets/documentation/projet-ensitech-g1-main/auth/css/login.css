@@ -1,0 +1,24 @@
+
+:root {
+    --primary-color-5: #D0D3DE;
+    --primary-color-3: #509CDB;
+    --primary-color-1: #152259;
+}
+main {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page_head_text {
+    text-shadow: 0px 6px 2px rgba(0, 0, 0, 0.43);
+
+}
+
+.already_connect_div {
+    font-size: 10px;
+}
+
+.create-next-btn {
+    background-color: var(--primary-color-3) !important;
+
+}

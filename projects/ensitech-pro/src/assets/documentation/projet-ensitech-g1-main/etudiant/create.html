@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../base/css/style.css">
+    <link rel="stylesheet" href="./css/create.css/">
+</head>
+
+<body class="row vh-100 m-0 p-0">
+
+    <section class="side_bar col-2 d-flex flex-column px-0 vh-100">
+        <!-- À ne pas modifier -->
+        <div class="logo-div d-flex flex-column align-items-center gap-3 py-4">
+            <div class="logo_ensitech" style="background-image: url('../base/img/ensitech_logo.jpeg');"></div>
+            <h3 class="text-white">Ensitech</h3>
+        </div>
+        <div class="side_bar_link p-4">
+            <ul class="list-unstyled">
+                <li class="text-white"><a href="../base/index.html"
+                        class="p-2 d-flex text-decoration-none justify-content-between rounded"><span
+                            class="d-flex gap-3"><i class="bi bi-house"></i>Accueil</span></a></li>
+                <li class="text-white"><a href="../enseignant/index.html"
+                        class="p-2 d-flex text-decoration-none justify-content-between rounded"><span
+                            class="d-flex gap-3"><i class="bi bi-people"></i>Enseignant</span></a></li>
+                <li class="text-white"><a href="../etudiant/index.html"
+                        class="p-2 d-flex text-decoration-none justify-content-between rounded active-sibar-item"><span
+                            class="d-flex gap-3"><i class="bi bi-mortarboard"></i>Étudiant</span><i
+                            class="bi bi-caret-right-fill my-arrow"></i></a></li>
+                <li class="text-white"><a href="../cours/index.html"
+                        class="p-2 d-flex text-decoration-none justify-content-between rounded"><span
+                            class="d-flex gap-3"><i class="bi bi-journal-text"></i>Cours</span></a></li>
+                            <li class="text-white"><a href="../stat/index.html"
+                                class="p-2 d-flex text-decoration-none justify-content-between rounded"><span
+                                    class="d-flex gap-3"><i class="bi bi-bar-chart"></i>Statistiques</span></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="col-10">
+        <header class="d-flex justify-content-end gap-3 p-2">
+            <div class="dropdown me-1 p-0 m-0 bg-transparent">
+                <button type="button" class="btn bg-transparent p-0 m-0 d-flex align-items-center gap-2"
+                    id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+                    <span class="h4 m-0 p-0" id="user_name_span">Jean Tchinda</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-gear-fill"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                    </svg>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                    <li><a class="dropdown-item d-flex gap-2" href="#"><i class="bi bi-person"></i>Profil</a></li>
+                    <li><a class="dropdown-item d-flex gap-2" href="../auth/login.html"><i
+                                class="bi bi-box-arrow-right"></i>Déconnexion</a></li>
+                                
+                </ul>
+            </div>
+        </header>
+        <div class="mx-5" id="liveAlertPlaceholder"></div>
+
+        <main class="m-5">
+            <!-- Contenu du document à modifier -->
+
+            <h1>Étudiants</h1>
+
+            <div class="container bg-white p-5 rounded mt-5">
+                <h2>Ajouter Étudiants</h2>
+                <h6 class="my-3">Manuellement</h6>
+                <div class="col w-75">
+                    <div class="row p-2">
+                        <div class="col">
+                            <label for="">Nom</label>
+                            <input class="form-control form-control-lg col-6 fs-6" type="text"
+                                aria-label=".form-control-lg example" id="first_name">
+                        </div>
+                        <div class="col">
+                            <label for="">Prénom</label>
+                            <input class="form-control form-control-lg col-6 fs-6" type="text"
+                                aria-label=".form-control-lg example" id="last_name">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col">
+                            <label for="">Adresse mail</label>
+                            <input class="form-control form-control-lg col-6 fs-6" type="email"
+                                aria-label=".form-control-lg example" id="email">
+                        </div>
+                        <div class="col">
+                            <label for="">Numéro de téléphone</label>
+                            <input class="form-control form-control-lg col-6 fs-6" type="tel"
+                                aria-label=".form-control-lg example" id="phone_number">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col">
+                            <label for="">Adresse</label>
+                            <input class="form-control form-control-lg col-6 fs-6" type="text"
+                                aria-label=".form-control-lg example" id="address">
+                        </div>
+                        <div class="col d-flex gap-5">
+                            <div class="p-0">
+                                <label for="">Date de naissance</label>
+                                <input class="form-control form-control-lg col-6 fs-6" type="date"
+                                    aria-label=".form-control-lg example" id="born_date">
+                            </div>
+                            <div class="p-0">
+                                <label for="">Genre</label>
+                                <input class="form-control form-control-lg col-6 fs-6" type="text"
+                                    aria-label=".form-control-lg example" id="gender">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end p-2 mt-3">
+                        <a href="./index.html" type="button" class="btn btn-primary w-25 create-next-btn" id="create_student_link">Enregistrer</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Fin du contenu -->
+        </main>
+    </section>
+  <script src="../base/js/script.js"></script>
+  <script src="./js/create.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
