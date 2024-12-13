@@ -1,1 +1,102 @@
-<p>etudiant works!</p>
+<div class="etudiant-container">
+  <h2>Gestion des Étudiants</h2>
+
+  <!-- Formulaire d'ajout ou de modification d'un étudiant -->
+  <div class="form-container">
+    <form #etudiantForm="ngForm" (ngSubmit)="onSubmit(etudiantForm)">
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          class="form-control"
+          [(ngModel)]="etudiant.nom"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="prenom">Prénom:</label>
+        <input
+          type="text"
+          id="prenom"
+          name="prenom"
+          class="form-control"
+          [(ngModel)]="etudiant.prenom"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          [(ngModel)]="etudiant.email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="dateNaissance">Date de naissance:</label>
+        <input
+          type="date"
+          id="dateNaissance"
+          name="dateNaissance"
+          class="form-control"
+          [(ngModel)]="etudiant.dateNaissance"
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!etudiantForm.form.valid"
+      >
+        {{ etudiant.id ? "Modifier" : "Ajouter" }} Étudiant
+      </button>
+    </form>
+  </div>
+
+  <!-- Tableau des étudiants -->
+  <div class="table-container mt-4">
+    <h3>Liste des Étudiants</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Date de Naissance</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let etudiant of etudiants">
+          <td>{{ etudiant.nom }}</td>
+          <td>{{ etudiant.prenom }}</td>
+          <td>{{ etudiant.email }}</td>
+          <td>{{ etudiant.dateNaissance | date }}</td>
+          <td>
+            <button
+              (click)="editEtudiant(etudiant)"
+              class="btn btn-warning btn-sm"
+            >
+              Modifier
+            </button>
+            <button
+              (click)="deleteEtudiant(etudiant.id)"
+              class="btn btn-danger btn-sm"
+            >
+              Supprimer
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

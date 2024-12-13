@@ -1,7 +1,11 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module'; // Gestion des routes de l'application
+import { HttpClientModule } from '@angular/common/http'; // Communication avec les APIs
+import { FormsModule } from '@angular/forms'; // Manipulation des formulaires
+import { CommonModule } from '@angular/common'; // Directives et pipes Angular de base
 
-import { AppRoutingModule } from './app-routing.module';
+// Importation des composants de l'application
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { EtudiantComponent } from './etudiant/etudiant.component';
@@ -11,40 +15,33 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ResponsableComponent } from './responsable/responsable.component';
-import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
-import { CommonModule } from '@angular/common';
-import { StatistiqueComponent } from './statistique/statistique.component';
-
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    EtudiantComponent,
-    CoursComponent,
-    EnseignantsComponent,
-    NavbarComponent,
-    FooterComponent,
-    SidebarComponent,
-    ResponsableComponent,
-    LoginComponent,
-    RegisterComponent,
-    AboutComponent,
-    StatistiqueComponent
+    AppComponent, // Composant racine de l'application
+    HomeComponent, // Composant de la page d'accueil
+    EtudiantComponent, // Composant de gestion des étudiants
+    CoursComponent, // Composant de gestion des cours
+    EnseignantsComponent, // Composant de gestion des enseignants
+    NavbarComponent, // Barre de navigation
+    FooterComponent, // Pied de page
+    SidebarComponent, // Barre latérale
+    ResponsableComponent, // Composant de gestion des responsables
+    LoginComponent, // Composant de la page de connexion
+    RegisterComponent, // Composant de la page d'inscription
+    AboutComponent, // Page "À propos"
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    CommonModule
+    BrowserModule, // Module de base pour les applications Angular
+    AppRoutingModule, // Gestion des routes définies
+    HttpClientModule, // Module HTTP pour consommer des APIs
+    FormsModule, // Manipulation et gestion des formulaires
+    CommonModule, // Fonctionnalités Angular communes
   ],
-  providers: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Correct import
-  bootstrap: [AppComponent]
+  providers: [], // Services globaux de l'application (à ajouter si nécessaire)
+  bootstrap: [AppComponent], // Composant à charger au démarrage
 })
 export class AppModule {}
