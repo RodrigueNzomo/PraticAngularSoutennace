@@ -1,1 +1,33 @@
-<h1>hello World_Projet Soutenance de Groupe 1 du 14122024</h1>
+<div class="d-flex">
+  <!-- Sidebar -->
+  <div *ngIf="!isLoginPage && !isRegisterPage" class="sidebar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a routerLink="/etudiant"><i class="fas fa-user-graduate"></i> Étudiants</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/enseignants"><i class="fas fa-chalkboard-teacher"></i> Enseignants</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/cours"><i class="fas fa-book"></i> Cours</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/responsable"><i class="fas fa-user-tie"></i> Responsable</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/statistique"><i class="fas fa-chart-bar"></i> Statistiques</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content" style="flex-grow: 1;">
+    <!-- Navbar -->
+    <app-navbar *ngIf="!isLoginPage && !isRegisterPage"></app-navbar> <!-- Masquer la navbar si sur la page login ou register -->
+
+    <!-- Page Content -->
+    <div class="content-container">
+      <router-outlet></router-outlet> <!-- Ceci est l'endroit où le contenu change -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<!-- statistiques.component.html -->
+<div>
+    <h1>Statistiques</h1>
+    
+    <!-- Afficher les effectifs des filières -->
+    <ul *ngIf="statistiques">
+      <li *ngFor="let item of statistiques.effectifs">
+        {{ item.filiere }} : {{ item.nombre }}
+      </li>
+    </ul>
+  </div>
+  

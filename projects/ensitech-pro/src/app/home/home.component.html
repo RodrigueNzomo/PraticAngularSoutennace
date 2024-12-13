@@ -1,0 +1,25 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+      <a href="/formations" class="cta-button">Voir les Formations</a>
+    </div>
+  </div>
+
+  <!-- Formations Odoo -->
+  <div class="courses-section">
+    <h2>Formations Odoo disponibles</h2>
+    <div class="courses-list">
+      <div *ngFor="let course of courses" class="course-item">
+        <h3>{{ course.role }}</h3>
+        <ul>
+          <li *ngFor="let skill of course.skills">
+            <i class="fas fa-check-circle"></i> {{ skill }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<div class="card p-3 shadow-lg bg-white">
+  <h2 class="text-center mb-3">{{ editEnseignantIndex === null ? 'Ajouter un Enseignant' : 'Modifier un Enseignant' }}</h2>
+
+  <form (ngSubmit)="ajouterOuModifierEnseignant()" #enseignantForm="ngForm">
+    <div class="row">
+      <div class="col-md-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          [(ngModel)]="nom"
+          class="form-control"
+          required
+          #nomInput="ngModel"
+        />
+        <div *ngIf="nomInput.invalid && nomInput.touched" class="text-danger">Nom obligatoire</div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input
+          type="text"
+          id="prenom"
+          name="prenom"
+          [(ngModel)]="prenom"
+          class="form-control"
+          required
+          #prenomInput="ngModel"
+        />
+        <div *ngIf="prenomInput.invalid && prenomInput.touched" class="text-danger">Prénom obligatoire</div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          class="form-control"
+          required
+          #emailInput="ngModel"
+        />
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger">Email obligatoire</div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="specialite" class="form-label">Spécialité</label>
+        <input
+          type="text"
+          id="specialite"
+          name="specialite"
+          [(ngModel)]="specialite"
+          class="form-control"
+          required
+          #specialiteInput="ngModel"
+        />
+        <div *ngIf="specialiteInput.invalid && specialiteInput.touched" class="text-danger">Spécialité obligatoire</div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="telephone" class="form-label">Téléphone</label>
+        <input
+          type="text"
+          id="telephone"
+          name="telephone"
+          [(ngModel)]="telephone"
+          class="form-control"
+          required
+          #telephoneInput="ngModel"
+        />
+        <div *ngIf="telephoneInput.invalid && telephoneInput.touched" class="text-danger">Téléphone obligatoire</div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="adresse" class="form-label">Adresse</label>
+        <input
+          type="text"
+          id="adresse"
+          name="adresse"
+          [(ngModel)]="adresse"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="enseignantForm.invalid">
+      {{ editEnseignantIndex === null ? 'Ajouter' : 'Modifier' }}
+    </button>
+  </form>
+
+  <div *ngIf="enseignantsList.length > 0" class="mt-4">
+    <h3 class="mb-3">Liste des Enseignants</h3>
+    <ul class="list-group">
+      <li *ngFor="let enseignant of enseignantsList; let i = index" class="list-group-item">
+        {{ enseignant.nom }} {{ enseignant.prenom }} - {{ enseignant.email }}
+        <button class="btn btn-warning btn-sm float-end mx-2" (click)="editEnseignant(i)">Modifier</button>
+        <button class="btn btn-danger btn-sm float-end" (click)="supprimerEnseignant(i)">Supprimer</button>
+      </li>
+    </ul>
+  </div>
+</div>

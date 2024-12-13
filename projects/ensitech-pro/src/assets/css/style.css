@@ -1,0 +1,60 @@
+
+:root {
+    --primary-color-5: #D0D3DE;
+    --primary-color-3: #509CDB;
+    --primary-color-1: #152259;
+}
+
+body {
+    background-color: var(--primary-color-5);
+    /* justify-content: stretch; */
+}
+
+.side_bar {
+    background-color: var(--primary-color-1);
+}
+
+.logo-div {
+    border-bottom: 1px solid rgba(189, 189, 189, 0.5);
+
+}
+.logo_ensitech {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-size: contain;
+}
+
+.side_bar_link a {
+    color: white;
+}
+
+.active-sibar-item {
+    background-color: var(--primary-color-3) !important;
+}
+
+
+.active-sibar-item .my-arrow {
+    justify-self: right;
+}
+
+
+
+body > section {
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+main {
+    overflow-x: scroll;
+}
+
+header {
+    margin-right: 30px;
+}
+
+
+.chart-div {
+    background-color: white;
+    border-radius: 5px;
+}

@@ -1,0 +1,25 @@
+<div>
+    <h2>Liste des Cours</h2>
+    <!-- Liste des cours -->
+    <ul>
+      <li *ngFor="let cours of coursList">
+        {{ cours.name }}
+        <button (click)="editCours(cours.id)">Modifier</button>
+        <button (click)="deleteCours(cours.id)">Supprimer</button>
+      </li>
+    </ul>
+  
+    <!-- Formulaire pour ajouter un nouveau cours -->
+    <div>
+      <input [(ngModel)]="newCours" placeholder="Ajouter un cours" />
+      <button (click)="addCours()">Ajouter</button>
+    </div>
+  
+    <!-- Formulaire pour modifier un cours -->
+    <div *ngIf="editingCoursId !== null">
+      <input [(ngModel)]="editingCoursName" placeholder="Modifier le nom du cours" />
+      <button (click)="saveCours()">Enregistrer</button>
+      <button (click)="cancelEdit()">Annuler</button>
+    </div>
+  </div>
+  

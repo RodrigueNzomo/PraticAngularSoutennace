@@ -1,0 +1,68 @@
+/* Style global de la mise en page */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 100%;
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-item {
+  margin-bottom: 15px;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item a i {
+  margin-right: 10px;
+}
+
+/* Main content section with the charts */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 2 1 100%;
+}
+
+canvas {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+}

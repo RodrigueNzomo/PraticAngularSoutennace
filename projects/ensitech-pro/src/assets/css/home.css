@@ -1,0 +1,12 @@
+
+:root {
+    --primary-color-5: #D0D3DE;
+    --primary-color-3: #509CDB;
+    --primary-color-1: #152259;
+}
+
+.icon-div {
+    background-color: rgba(21, 34, 89, 0.2);
+    border-radius: 10px;
+    
+}

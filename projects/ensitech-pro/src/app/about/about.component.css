@@ -1,0 +1,94 @@
+:root {
+  --primary-color: #2a9df4;
+  --hover-color: #217bc4;
+  --background-color: #f9f9f9;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.about-container:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.title {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.partner-program h2,
+.values-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.partner-program p,
+.values-section p {
+  margin-bottom: 15px;
+}
+.benefits-list li {
+  margin: 10px; /* Centrer les éléments */
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  max-width: fit-content; /* Ajuster la largeur */
+}
+
+.benefits-list li::before {
+  content: "✔️";
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: larger; /* Agrandir l'icône */
+}
+.btn-contact {
+  background-color: burlywood;
+  color: hsl(250, 88%, 47%);
+  padding: 10px 20px;
+  border: hsl(250, 88%, 47%);
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Ajout de transition */
+  box-sizing: content-box;
+}
+
+.btn-contact:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05); /* Effet d'agrandissement */
+}
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px; /* Ajustement du padding */
+  }
+
+  .image-left,
+  .image-right {
+    max-width: calc(100% -40px); /* Ajustement dynamique */
+    margin-bottom: 20px; /* Espacement entre les images */
+  }
+
+  .about-section {
+    max-width: calc(100% -40px); /* Ajustement dynamique */
+    padding-left: 10px; /* Ajout de padding */
+    padding-right: 10px; /* Ajout de padding */
+  }
+}

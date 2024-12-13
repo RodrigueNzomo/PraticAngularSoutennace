@@ -1,0 +1,48 @@
+<div class="container">
+  <!-- Sidebar contenant les liens de navigation -->
+  <div class="sidebar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a routerLink="/enseignant" routerLinkActive="active">
+          <i class="fas fa-chalkboard-teacher"></i> Enseignants
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/cours" routerLinkActive="active">
+          <i class="fas fa-book"></i> Cours
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/etudiant" routerLinkActive="active">
+          <i class="fas fa-user-graduate"></i> Étudiants
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/responsable" routerLinkActive="active">
+          <i class="fas fa-user-tie"></i> Responsable
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/statistiques" routerLinkActive="active">
+          <i class="fas fa-chart-bar"></i> Statistiques
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Section principale contenant les graphiques et le contenu dynamique -->
+  <div class="main-content">
+    <div>
+      <canvas #barChart></canvas>
+    </div>
+    <div>
+      <canvas #pieChart1></canvas>
+    </div>
+    <div>
+      <canvas #pieChart2></canvas>
+    </div>
+
+    <!-- Le contenu change en fonction de la route sélectionnée -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
